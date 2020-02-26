@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+    <h1>Calculator</h1>
+    <form method="POST" action='{% url "home" %}'>
+        {% csrf_token %}
+    <input name="x" type="text"><br>
+    <input name="y" type="text"><br>
+    <input type="submit" name="add" value="+"></input>
+    <input type="submit" name="sub" value="-"></input>
+    <input type="submit" name="mul" value="*"></input>
+    <input type="submit" name="div" value="/"></input>
+    </form>
+<h3> Result : {{ result }} </h3>
 </body>
 </html>
