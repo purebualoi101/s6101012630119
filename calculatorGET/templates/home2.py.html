@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CalculatorGET</title>
 </head>
 <body>
-
-    <h1>Calculator</h1>
-    <form method="POST" action='{% url "home" %}'>
+    <form method="get" action='{% url "home" %}'>
         {% csrf_token %}
     <input name="x" type="text"><br>
     <input name="y" type="text"><br>
@@ -16,16 +14,5 @@
     <input type="submit" name="mul" value="*"></input>
     <input type="submit" name="div" value="/"></input>
     </form>
-<h3> Result : {{ result }} </h3>
-    <table id="id_list_table">
-        <form method="POST">
-{% for x in allHistory %}
-            <tr><td> {{ x.num_x }} {{ x.operation }} {{ x.num_y }} = {{ x.num_result }}</td></tr>
-{% endfor %}
-        </form>
-    </table>
 </body>
 </html>
-
-
-<table id="good_subject_table">
